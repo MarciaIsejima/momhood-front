@@ -19,16 +19,22 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var babyImageView: UIImageView!
     @IBOutlet weak var babyViewController: UIView!
     @IBOutlet weak var babySizeLabel: UILabel!
-    
     @IBOutlet weak var babyTagLine: UILabel!
     
     //MARK: Actions
     @IBAction func timelineButton(_ sender: UIButton) {
-        
     }
     
     @IBAction func shareButton(_ sender: UIButton) {
+    }
     
+    @IBAction func yourBodyButton(_ sender: Any) {
+    }
+    
+    @IBAction func activitiesButton(_ sender: Any) {
+    }
+    
+    @IBAction func dietButton(_ sender: Any) {
     }
     
     override func viewDidLoad() {
@@ -37,15 +43,18 @@ class HomeViewController: UIViewController {
         
         //load Timeline
         loadTimeline()
+        
+        //load current Week info
+        loadCurrentWeek()
     
         //greeting message
-        greetingLabel?.text = "Good Morning Katie!"
+        greetingLabel?.text = "Hello Katie!"
         
         //hero image
         heroImageView?.image=UIImage(named: "week16Hero")
         
         //week count label
-        weekCountLabel?.text = "Week 16"
+        weekCountLabel?.text = "Week \(currentWeek.week_count ?? 0)"
 
     }
     
@@ -55,22 +64,52 @@ class HomeViewController: UIViewController {
 //        navigationItem.title = "Timeline"
         
         //period of pregnancy
-        periodLabel.text = "2nd trimester"
+        periodLabel.text = currentWeek.period
         
         //number of days to go
         daysToGoLabel.text = "200 Days to go"
         
         //Your baby session
-        
         babyViewController.layer.borderWidth = 1
-        //babyViewController.layer.borderColor = UIColor.lightGray.cgColor
         babyViewController.layer.borderColor = UIColor.init(rgb: 0xebebeb).cgColor
-        //F1F8F8
         babyImageView.image=UIImage(named:"babyHome")
+        babyTagLine.text = currentWeek.baby?.tagline
+        babySizeLabel.text = (currentWeek.baby!.size ?? "") + " / " + (currentWeek.baby!.weight ?? "")
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
         
-            babyTagLine.text = "Baby's First Hiccups Ahead!"
-
-            babySizeLabel.text = "10 - 13cm/0.09 - 0.11kg"
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+        case "ShowYourBodyArticles":
+            guard let curWeekArticleViewController = segue.destination as? CurWeekArticleViewController
+                else {
+                    fatalError("Unexpected destination: \(segue.destination)")
+            }
+            curWeekArticleViewController.senderButton = "Your Body"
+        
+        case "ShowDietArticles":
+            guard let curWeekArticleViewController = segue.destination as? CurWeekArticleViewController
+                else {
+                    fatalError("Unexpected destination: \(segue.destination)")
+            }
+            curWeekArticleViewController.senderButton = "Diet"
+            
+        case "ShowActivitiesArticles":
+            guard let curWeekArticleViewController = segue.destination as? CurWeekArticleViewController
+                else {
+                    fatalError("Unexpected destination: \(segue.destination)")
+            }
+            curWeekArticleViewController.senderButton = "Activities"
+            
+        default:
+            return
+        }
+            
     }
 
 }

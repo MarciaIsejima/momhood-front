@@ -15,7 +15,6 @@
 		4059A47C22C954EB00C1CE85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4059A47A22C954EB00C1CE85 /* LaunchScreen.storyboard */; };
 		4059A48822C959A100C1CE85 /* UIImageView+Downloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059A48622C959A100C1CE85 /* UIImageView+Downloading.swift */; };
 		4059A48922C959A100C1CE85 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059A48722C959A100C1CE85 /* UIColor+Hex.swift */; };
-		4059A48C22C959AE00C1CE85 /* WeekInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059A48B22C959AE00C1CE85 /* WeekInfoCell.swift */; };
 		4059A48F22C959D600C1CE85 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059A48E22C959D600C1CE85 /* Timeline.swift */; };
 		4059A49422C959E400C1CE85 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059A49122C959E400C1CE85 /* APIClient.swift */; };
 		4059A49522C959E400C1CE85 /* WeeklyInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059A49222C959E400C1CE85 /* WeeklyInfoService.swift */; };
@@ -30,6 +29,8 @@
 		40885AC422CAA70700DC1180 /* WeekTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40885AC322CAA70700DC1180 /* WeekTableViewCell.swift */; };
 		40885AC622CB245300DC1180 /* SampleData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40885AC522CB245300DC1180 /* SampleData2.swift */; };
 		40885AEB22CBDFD600DC1180 /* WeekDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40885AEA22CBDFD600DC1180 /* WeekDetailViewController.swift */; };
+		409C8A4822CF1786004301E6 /* BabyGrowthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409C8A4722CF1786004301E6 /* BabyGrowthViewController.swift */; };
+		40FCC95322CE9EA100C257E8 /* CurWeekArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FCC95222CE9EA100C257E8 /* CurWeekArticleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +44,6 @@
 		4059A47D22C954EB00C1CE85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4059A48622C959A100C1CE85 /* UIImageView+Downloading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Downloading.swift"; sourceTree = "<group>"; };
 		4059A48722C959A100C1CE85 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
-		4059A48B22C959AE00C1CE85 /* WeekInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekInfoCell.swift; sourceTree = "<group>"; };
 		4059A48E22C959D600C1CE85 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		4059A49122C959E400C1CE85 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		4059A49222C959E400C1CE85 /* WeeklyInfoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyInfoService.swift; sourceTree = "<group>"; };
@@ -58,6 +58,9 @@
 		40885AC322CAA70700DC1180 /* WeekTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTableViewCell.swift; sourceTree = "<group>"; };
 		40885AC522CB245300DC1180 /* SampleData2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData2.swift; sourceTree = "<group>"; };
 		40885AEA22CBDFD600DC1180 /* WeekDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDetailViewController.swift; sourceTree = "<group>"; };
+		409C8A4722CF1786004301E6 /* BabyGrowthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyGrowthViewController.swift; sourceTree = "<group>"; };
+		40FCC95222CE9EA100C257E8 /* CurWeekArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurWeekArticleViewController.swift; sourceTree = "<group>"; };
+		40FCC95622CEF3E000C257E8 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +120,6 @@
 		4059A48A22C959AE00C1CE85 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				4059A48B22C959AE00C1CE85 /* WeekInfoCell.swift */,
 				40885AC322CAA70700DC1180 /* WeekTableViewCell.swift */,
 			);
 			path = Cells;
@@ -145,6 +147,7 @@
 		4059A49722C959F200C1CE85 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				40FCC95622CEF3E000C257E8 /* Roboto-Regular.ttf */,
 				4059A49822C959F200C1CE85 /* Roboto-Medium.ttf */,
 				4059A49922C959F200C1CE85 /* Roboto-Light.ttf */,
 				4059A49A22C959F200C1CE85 /* Montserrat-Bold.ttf */,
@@ -157,6 +160,8 @@
 		4059A4A422C95C5100C1CE85 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				409C8A4722CF1786004301E6 /* BabyGrowthViewController.swift */,
+				40FCC95222CE9EA100C257E8 /* CurWeekArticleViewController.swift */,
 				40885AEA22CBDFD600DC1180 /* WeekDetailViewController.swift */,
 				40885AC122C9C34E00DC1180 /* TimelineTableViewController.swift */,
 				4059A47122C954EA00C1CE85 /* HomeViewController.swift */,
@@ -253,10 +258,11 @@
 				4059A4A322C95C4400C1CE85 /* ProfileViewController.swift in Sources */,
 				40885AC422CAA70700DC1180 /* WeekTableViewCell.swift in Sources */,
 				4059A47022C954EA00C1CE85 /* AppDelegate.swift in Sources */,
+				409C8A4822CF1786004301E6 /* BabyGrowthViewController.swift in Sources */,
 				4059A47222C954EA00C1CE85 /* HomeViewController.swift in Sources */,
 				4059A48922C959A100C1CE85 /* UIColor+Hex.swift in Sources */,
 				40885AC222C9C34E00DC1180 /* TimelineTableViewController.swift in Sources */,
-				4059A48C22C959AE00C1CE85 /* WeekInfoCell.swift in Sources */,
+				40FCC95322CE9EA100C257E8 /* CurWeekArticleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

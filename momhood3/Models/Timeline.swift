@@ -9,6 +9,7 @@
 import Foundation
 
 var timeline = [Week]()
+var currentWeek = Week()
 
 struct Week: Codable {
     var week_count: Int?
@@ -130,25 +131,18 @@ func loadTimeline() {
         timeline = weeks
     }
     
+}
+
+func loadCurrentWeek() {
+    // function that retrieves the current week of pregnancy based on user data
     
-//    if let products = try? decoder.decode([GroceryProduct].self, from: json) {
-//        print("The f ollowing products are available:")
-//        for product in products {
-//            print("\t\(product.name) (\(product.points) points)")
-//            if let description = product.description {
-//                print("\t\t\(description)")
-//            }
-//        }
-//    }
-//
+    /*** replace this by current week calculation function +
+     call to api ***/
+    let json = retrieveSampleData2()
     
-    //
-    //    if let data = data, error == nil {
-    //        if let timeline = try? JSONDecoder().decode(Timeline.self, from: data), let delegate = self?.delegate as? WeekInfoDelegate {
-    //            delegate.searchCompleted(with: timeline)
-    //        }
-    //    } else {
-    //        self?.delegate?.requestFailed(with: APIError.requestFailed)
-    //    }
+    let decoder = JSONDecoder()
     
+    if let week = try? decoder.decode(Week.self, from: json){
+        currentWeek = week
+    }
 }

@@ -28,7 +28,6 @@ class TimelineTableViewController: UITableViewController {
         self.navigationController!.isNavigationBarHidden = false
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.init(rgb: 0x333333)]
         navigationItem.title = "Timeline"
-
         
     }
 
