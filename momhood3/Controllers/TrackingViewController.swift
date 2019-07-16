@@ -8,13 +8,39 @@
 
 import UIKit
 
-class TrackingViewController: UIViewController {
+class TrackingViewController: UITableViewController {
 
+    @IBOutlet weak var weightTextField: UITextField!
+    
+    @IBOutlet weak var waistTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        //hides the shadow from navigation bar
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+
+        //show navigation bar
+        self.navigationController!.isNavigationBarHidden = false
+        //set page title
+        navigationItem.title = "Week 16"
+
+        weightTextField.setBottomBorder()
+        waistTextField.setBottomBorder()
+        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        //set left bar button image
+        let customButton = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 30, height: 30))
+        customButton.setImage(UIImage.init(named:"calendarBlack"), for: .normal)
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: customButton)
 
+        
+        
 
+    }
 }
 
