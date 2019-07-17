@@ -44,11 +44,14 @@ class HomeViewController: UIViewController {
         //load Timeline
         loadTimeline()
         
+        //load user info
+        loadUserInfo()
+        
         //load current Week info
         loadCurrentWeek()
     
         //greeting message
-        greetingLabel?.text = "Hello Katie!"
+        greetingLabel?.text = "Hello \(mom.profileInfo?.name ?? "User")!"
         
         //hero image
         heroImageView?.image=UIImage(named: "week16Hero")

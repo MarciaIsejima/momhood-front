@@ -119,15 +119,6 @@ func loadTimeline() {
     let decoder = JSONDecoder()
     
     if let weeks = try? decoder.decode([Week].self, from: json) {
-//        print("Weekly info available:")
-//        for week in timeline {
-//            print("\t\(week.week_count ?? 0) (\(week.baby?.fruitsize ?? "") )")
-//            if let description = week.baby?.articles {
-//                if description.count > 0 {
-//                    print("\t\t\(description[0].title ?? "")")}
-//            }
-//
-//        }
         timeline = weeks
     }
     

@@ -39,6 +39,8 @@
 		40B0561C22D9872700CCBEFF /* TextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0561B22D9872700CCBEFF /* TextFieldExtensions.swift */; };
 		40FA59AF22DE36A10093F768 /* TrackingTableViewController_old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FA59AE22DE36A10093F768 /* TrackingTableViewController_old.swift */; };
 		40FA59B122DE4A9C0093F768 /* TrackingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FA59B022DE4A9C0093F768 /* TrackingTableViewController.swift */; };
+		40FA59B322DE85A70093F768 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FA59B222DE85A70093F768 /* StringExtensions.swift */; };
+		40FA59B522DEA34B0093F768 /* Mom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FA59B422DEA34B0093F768 /* Mom.swift */; };
 		40FCC95322CE9EA100C257E8 /* CurWeekArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FCC95222CE9EA100C257E8 /* CurWeekArticleViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		40B0561B22D9872700CCBEFF /* TextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtensions.swift; sourceTree = "<group>"; };
 		40FA59AE22DE36A10093F768 /* TrackingTableViewController_old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingTableViewController_old.swift; sourceTree = "<group>"; };
 		40FA59B022DE4A9C0093F768 /* TrackingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingTableViewController.swift; sourceTree = "<group>"; };
+		40FA59B222DE85A70093F768 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		40FA59B422DEA34B0093F768 /* Mom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mom.swift; sourceTree = "<group>"; };
 		40FCC95222CE9EA100C257E8 /* CurWeekArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurWeekArticleViewController.swift; sourceTree = "<group>"; };
 		40FCC95622CEF3E000C257E8 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +144,7 @@
 				4059A48622C959A100C1CE85 /* UIImageView+Downloading.swift */,
 				4059A48722C959A100C1CE85 /* UIColor+Hex.swift */,
 				40A17FFA22D8391600A1758F /* NSDate+DateParts.swift */,
+				40FA59B222DE85A70093F768 /* StringExtensions.swift */,
 				40B0561B22D9872700CCBEFF /* TextFieldExtensions.swift */,
 			);
 			path = Extensions;
@@ -157,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				4059A48E22C959D600C1CE85 /* Timeline.swift */,
+				40FA59B422DEA34B0093F768 /* Mom.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -293,6 +299,7 @@
 				4059A49422C959E400C1CE85 /* APIClient.swift in Sources */,
 				40B0561C22D9872700CCBEFF /* TextFieldExtensions.swift in Sources */,
 				4059A4A322C95C4400C1CE85 /* ProfileViewController.swift in Sources */,
+				40FA59B322DE85A70093F768 /* StringExtensions.swift in Sources */,
 				40885AC422CAA70700DC1180 /* WeekTableViewCell.swift in Sources */,
 				40A17FFB22D8391600A1758F /* NSDate+DateParts.swift in Sources */,
 				4059A47022C954EA00C1CE85 /* AppDelegate.swift in Sources */,
@@ -301,6 +308,7 @@
 				409C8A4822CF1786004301E6 /* BabyGrowthViewController.swift in Sources */,
 				4059A47222C954EA00C1CE85 /* HomeViewController.swift in Sources */,
 				4059A48922C959A100C1CE85 /* UIColor+Hex.swift in Sources */,
+				40FA59B522DEA34B0093F768 /* Mom.swift in Sources */,
 				40885AC222C9C34E00DC1180 /* TimelineTableViewController.swift in Sources */,
 				40FCC95322CE9EA100C257E8 /* CurWeekArticleViewController.swift in Sources */,
 			);
