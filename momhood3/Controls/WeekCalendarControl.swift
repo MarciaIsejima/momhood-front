@@ -15,7 +15,12 @@ import UIKit
     private var dayButtons = [UIButton]()
     private var dateArray = [Date]()
     
-    var firstDayOfWeek = Date()
+    @IBInspectable var firstDayOfWeek = Date() {
+        didSet {
+            setupButtons()
+            selectedDay = selectDefaultDay()
+        }
+    }
     
     private var selectedDay = 0 {
         didSet {
@@ -39,19 +44,20 @@ import UIKit
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.init(rgb: 0xD385D2)
-        setupDate()
-        
-        setupButtons()
-        selectedDay = selectDefaultDay()
+        //setupDate()
+//        setupButtons()
+//        selectedDay = selectDefaultDay()
         
     }
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
         self.backgroundColor = UIColor.init(rgb: 0xD385D2)
-        setupDate()
-        setupButtons()
-        selectedDay = selectDefaultDay()
+        
+//        //setupDate()
+//        setupButtons()
+//        selectedDay = selectDefaultDay()
+        
     }
     
     //MARK: Button Action
@@ -62,6 +68,7 @@ import UIKit
         
         // stores the index of the selected button
         selectedDay = index
+        
         
     }
     
@@ -129,6 +136,7 @@ import UIKit
             
             var modifiedDate = Calendar.current.date(byAdding: .day, value: i, to: firstDayOfWeek)!
             modifiedDate = Calendar.current.startOfDay(for: modifiedDate)
+            print(modifiedDate)
             dateArray.append(modifiedDate)
             
             // Get the day number of the date
@@ -192,10 +200,7 @@ import UIKit
     private func selectDefaultDay() -> Int {
         var selectedDayIndex = 0
         for (index, date) in dateArray.enumerated() {
-            // if the date is the current day, select it as default
             if date == Calendar.current.startOfDay(for: Date()) {
-                print(date)
-                print(Date())
                 selectedDayIndex = index
             }
         }

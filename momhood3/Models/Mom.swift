@@ -10,13 +10,6 @@ import Foundation
 
 var mom = Mom()
 var momTrackingValues = [TrackingInfo]()
-//"_id": "5d2e65691c9d44000094a6ec",
-//"profileInfo": {"name": "Rose", "email": "katie1234@gmail.com", "password": "katie1234", "dateOfBirth": 0, "expectedDueDate": 0, "preferredMetrics": "kg/cm", "prePregnancyWeightValue": 55.0, "prePregnancyWeightUnit": "kg", "prePregnancyWaistValue": 80.0, "prePregnancyWaistUnit": "cm", "heightValue": 156.0, "heightUnit": "cm"},
-//"babyInfo": {"nickname": "John", "gender": "male"},
-//"partnerInfo": [{"name": "Joey","email": "joey1234@gmail.com","phone": "12345678991","relationship": "partner","status": 1},
-//{"name": "Maggie","email": "maggie9999@gmail.com","phone": "393994005959","relationship": "mother","status": 1}],
-//"trackingInfo": [{"inputDate": 0,"weightValue": 55.5,"weightUnit": "kg","waistValue": 82.0,"waistUnit": "cm","moodId": 3}]
-//}
 
 struct Mom: Codable {
     var _id: String?
@@ -34,8 +27,8 @@ struct ProfileInfo: Codable {
     var name: String?
     var email: String?
     var password: String?
-    var dateOfBirth: Int?
-    var expectedDueDate: Int?
+    var dateOfBirth: Double?
+    var expectedDueDate: Double?
     var preferredMetrics: String?
     var prePregnancyWeightValue: Double?
     var prePregnancyWeightUnit: String?
@@ -67,7 +60,7 @@ struct PartnerInfo: Codable {
 //}
 
 struct TrackingInfo: Codable {
-    var inputDate: Int?
+    var inputDate: Double?
     var weightValue: Double?
     var weightUnit: String?
     var waistValue: Double?

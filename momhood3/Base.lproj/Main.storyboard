@@ -537,16 +537,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTb-2T-y83">
-                                                    <rect key="frame" x="0.0" y="0.0" width="364" height="569"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="363.5" height="569"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOW-An-vta">
-                                                            <rect key="frame" x="152.5" y="16" width="59" height="20"/>
-                                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto Medium" pointSize="17"/>
+                                                            <rect key="frame" x="157.5" y="4" width="48.5" height="16.5"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto Medium" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="In4-d4-BFF" customClass="WeekCalendarControl" customModule="momhood3" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="60" width="375" height="55"/>
+                                                            <rect key="frame" x="0.0" y="36.5" width="375" height="55"/>
                                                             <color key="backgroundColor" red="0.82745098039999998" green="0.52156862749999999" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="buttonCount">
@@ -555,19 +555,19 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you feel today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Q9-ec-MQp">
-                                                            <rect key="frame" x="83" y="135" width="198.5" height="23"/>
+                                                            <rect key="frame" x="82.5" y="115.5" width="198.5" height="23"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="19"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell us your weight today:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJn-pv-PLq">
-                                                            <rect key="frame" x="92" y="268" width="180" height="19"/>
+                                                            <rect key="frame" x="91.5" y="248.5" width="180" height="19"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ne-cQ-bba" userLabel="Weight Text Field">
-                                                            <rect key="frame" x="140" y="299" width="65" height="30"/>
+                                                            <rect key="frame" x="140" y="279.5" width="65" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="65" id="54n-xK-kGg"/>
                                                             </constraints>
@@ -579,25 +579,25 @@
                                                             </connections>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMn-41-kmz">
-                                                            <rect key="frame" x="213" y="304.5" width="22" height="19"/>
+                                                            <rect key="frame" x="213" y="285" width="21.5" height="19"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnh-ja-WuO">
-                                                            <rect key="frame" x="213" y="401.5" width="13" height="19"/>
+                                                            <rect key="frame" x="213" y="382" width="13" height="19"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell us your waist size today:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1i-fy-PXX">
-                                                            <rect key="frame" x="80.5" y="365" width="203" height="19"/>
+                                                            <rect key="frame" x="80" y="345.5" width="203" height="19"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RFs-3h-Sea">
-                                                            <rect key="frame" x="140" y="396" width="65" height="30"/>
+                                                            <rect key="frame" x="140" y="376.5" width="65" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="65" id="gSa-Xf-ean"/>
                                                             </constraints>
@@ -609,7 +609,7 @@
                                                             </connections>
                                                         </textField>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7nC-Qw-QC4" customClass="MoodControl" customModule="momhood3" customModuleProvider="target">
-                                                            <rect key="frame" x="22" y="176" width="320" height="56"/>
+                                                            <rect key="frame" x="21.5" y="156.5" width="320" height="56"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="faceCount">
                                                                     <integer key="value" value="5"/>
@@ -620,7 +620,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEs-pM-vfy">
-                                                            <rect key="frame" x="59.5" y="486" width="245" height="45"/>
+                                                            <rect key="frame" x="59" y="466.5" width="245" height="45"/>
                                                             <color key="backgroundColor" red="0.82745098039999998" green="0.52156862749999999" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="245" id="Q25-Gt-cGE"/>
@@ -638,7 +638,7 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="7nC-Qw-QC4" firstAttribute="top" secondItem="2Q9-ec-MQp" secondAttribute="bottom" constant="18" id="0mH-VI-x8D"/>
-                                                        <constraint firstItem="In4-d4-BFF" firstAttribute="top" secondItem="xOW-An-vta" secondAttribute="bottom" constant="24" id="4bQ-3H-OSn"/>
+                                                        <constraint firstItem="In4-d4-BFF" firstAttribute="top" secondItem="xOW-An-vta" secondAttribute="bottom" constant="16" id="4bQ-3H-OSn"/>
                                                         <constraint firstItem="i1i-fy-PXX" firstAttribute="centerX" secondItem="LTb-2T-y83" secondAttribute="centerX" id="63i-Hw-TFb"/>
                                                         <constraint firstItem="eMn-41-kmz" firstAttribute="leading" secondItem="8ne-cQ-bba" secondAttribute="trailing" constant="8" id="8e4-OD-EVh"/>
                                                         <constraint firstItem="RFs-3h-Sea" firstAttribute="top" secondItem="i1i-fy-PXX" secondAttribute="bottom" constant="12" id="B0a-5N-2RY"/>
@@ -646,7 +646,7 @@
                                                         <constraint firstItem="i1i-fy-PXX" firstAttribute="top" secondItem="8ne-cQ-bba" secondAttribute="bottom" constant="36" id="ORr-1T-s2n"/>
                                                         <constraint firstAttribute="trailing" secondItem="eMn-41-kmz" secondAttribute="trailing" constant="129" id="RXf-EN-1Of"/>
                                                         <constraint firstItem="fEs-pM-vfy" firstAttribute="top" secondItem="RFs-3h-Sea" secondAttribute="bottom" constant="60" id="Un8-GV-MSM"/>
-                                                        <constraint firstItem="xOW-An-vta" firstAttribute="top" secondItem="LTb-2T-y83" secondAttribute="top" constant="16" id="Y88-NA-FVL"/>
+                                                        <constraint firstItem="xOW-An-vta" firstAttribute="top" secondItem="LTb-2T-y83" secondAttribute="top" constant="4" id="Y88-NA-FVL"/>
                                                         <constraint firstItem="eMn-41-kmz" firstAttribute="centerY" secondItem="8ne-cQ-bba" secondAttribute="centerY" id="YJr-ck-4jQ"/>
                                                         <constraint firstItem="2Q9-ec-MQp" firstAttribute="centerX" secondItem="LTb-2T-y83" secondAttribute="centerX" id="b79-cK-Q22"/>
                                                         <constraint firstItem="RFs-3h-Sea" firstAttribute="leading" secondItem="8ne-cQ-bba" secondAttribute="leading" id="bJ0-6a-bcN"/>
@@ -659,7 +659,7 @@
                                                         <constraint firstItem="8ne-cQ-bba" firstAttribute="leading" secondItem="LTb-2T-y83" secondAttribute="leading" constant="140" id="oZ7-at-3kT"/>
                                                         <constraint firstItem="8ne-cQ-bba" firstAttribute="top" secondItem="LJn-pv-PLq" secondAttribute="bottom" constant="12" id="sa3-tg-ZhD"/>
                                                         <constraint firstItem="7nC-Qw-QC4" firstAttribute="centerX" secondItem="LTb-2T-y83" secondAttribute="centerX" id="ugs-Vq-2Se"/>
-                                                        <constraint firstItem="2Q9-ec-MQp" firstAttribute="top" secondItem="In4-d4-BFF" secondAttribute="bottom" constant="20" id="vRU-tZ-MHh"/>
+                                                        <constraint firstItem="2Q9-ec-MQp" firstAttribute="top" secondItem="In4-d4-BFF" secondAttribute="bottom" constant="24" id="vRU-tZ-MHh"/>
                                                         <constraint firstItem="eMn-41-kmz" firstAttribute="leading" secondItem="LTb-2T-y83" secondAttribute="leading" constant="213" id="w2o-2r-SeE"/>
                                                         <constraint firstItem="LJn-pv-PLq" firstAttribute="top" secondItem="7nC-Qw-QC4" secondAttribute="bottom" constant="36" id="wOb-aI-hGZ"/>
                                                     </constraints>
@@ -685,7 +685,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="u4n-t1-OR8"/>
                     <connections>
+                        <outlet property="subtitleLabel" destination="xOW-An-vta" id="18I-wQ-53c"/>
                         <outlet property="waistTextField" destination="RFs-3h-Sea" id="yyc-y6-t08"/>
+                        <outlet property="weekCalendarControl" destination="In4-d4-BFF" id="CPD-6t-0Qd"/>
                         <outlet property="weightTextField" destination="8ne-cQ-bba" id="n7O-aB-g1k"/>
                     </connections>
                 </tableViewController>

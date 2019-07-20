@@ -10,6 +10,10 @@ import UIKit
 
 class TrackingTableViewController: UITableViewController, UITextFieldDelegate {
 
+    
+    @IBOutlet weak var weekCalendarControl: WeekCalendarControl!
+    
+    @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var waistTextField: UITextField!
     @IBOutlet weak var weightTextField
     : UITextField!
@@ -29,8 +33,12 @@ class TrackingTableViewController: UITableViewController, UITextFieldDelegate {
         //show navigation bar
         self.navigationController!.isNavigationBarHidden = false
         //set page title
-        navigationItem.title = "Week 16"
+        navigationItem.title = "Week \(currentWeek.week_count ?? 0)"
         
+        //set page subtitle
+        subtitleLabel.text = "\(currentWeek.period ?? "")    \(pregnancy.daysToGo) days to go"
+
+        //format text fields to show only bottom border
         weightTextField.setBottomBorder()
         waistTextField.setBottomBorder()
         
@@ -47,6 +55,9 @@ class TrackingTableViewController: UITableViewController, UITextFieldDelegate {
         let customButton = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 30, height: 30))
         customButton.setImage(UIImage.init(named:"calendarBlack"), for: .normal)
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: customButton)
+        
+        //set week calendar first day
+        weekCalendarControl.firstDayOfWeek = pregnancy.firstDayOfWeek.last!
         
     }
     

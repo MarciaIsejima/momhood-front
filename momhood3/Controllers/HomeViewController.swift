@@ -47,6 +47,11 @@ class HomeViewController: UIViewController {
         //load user info
         loadUserInfo()
         
+        //load pregnancy info
+        
+        //calculatePregnancyParameters(for: Date.init(timeIntervalSince1970: (mom.profileInfo?.expectedDueDate)!))
+        calculatePregnancyParameters(for: getDate(dateString: "2020-01-14")!)
+        
         //load current Week info
         loadCurrentWeek()
     
@@ -71,6 +76,7 @@ class HomeViewController: UIViewController {
         
         //number of days to go
         daysToGoLabel.text = "200 Days to go"
+        daysToGoLabel.text = "\(pregnancy.daysToGo) days to go"
         
         //Your baby session
         babyViewController.layer.borderWidth = 1

@@ -50,7 +50,7 @@ class WeekDetailViewController: UIViewController {
             //Hero image section
             weekCountLabel.text = weekTitle
             periodLabel.text = week.period
-            daysToGoLabel.text = "200 days to go"
+            daysToGoLabel.text = "\(pregnancy.daysToGo) days to go"
             fruitImageView.image = UIImage(named:weekCount)
             heroView.backgroundColor = UIColor.init(rgb: weekColors[week.week_count!])
             
