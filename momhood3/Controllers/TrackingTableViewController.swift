@@ -8,21 +8,23 @@
 
 import UIKit
 
-class TrackingTableViewController: UITableViewController, UITextFieldDelegate {
+class TrackingTableViewController: UITableViewController, UITextFieldDelegate, WeekCalendarDelegate {
 
-    
     @IBOutlet weak var weekCalendarControl: WeekCalendarControl!
-    
+    @IBOutlet weak var moodControl: MoodControl!
+    @IBOutlet weak var waistUnit: UILabel!
+    @IBOutlet weak var weightUnit: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var waistTextField: UITextField!
-    @IBOutlet weak var weightTextField
-    : UITextField!
+    @IBOutlet weak var weightTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         weightTextField.delegate = self
         waistTextField.delegate = self
-
+        weekCalendarControl.delegate = self
+        
         //Adding "Done" button to numeric keyboard
         weightTextField.addDoneButtonToKeyboard(myAction:  #selector(self.weightTextField.resignFirstResponder))
         waistTextField.addDoneButtonToKeyboard(myAction:  #selector(self.waistTextField.resignFirstResponder))
@@ -42,11 +44,16 @@ class TrackingTableViewController: UITableViewController, UITextFieldDelegate {
         weightTextField.setBottomBorder()
         waistTextField.setBottomBorder()
         
+        //get mom tracking info
+        momTrackingValues = mom.trackingInfo!
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,12 +65,99 @@ class TrackingTableViewController: UITableViewController, UITextFieldDelegate {
         
         //set week calendar first day
         weekCalendarControl.firstDayOfWeek = pregnancy.firstDayOfWeek.last!
+        loadSelectedDateInfo(for: weekCalendarControl.getSelectedDate())
         
     }
     
     @IBAction func done (_ sender: UITextField) {
         sender.resignFirstResponder()
     }
+    
+    func saveDateInfo(for date: Date) {
+
+        let timeInterval = date.timeIntervalSince1970
+        let infoFiltered = momTrackingValues.filter({$0.inputDate == timeInterval})
+        
+        if infoFiltered.count > 0  {
+
+            momTrackingValues = momTrackingValues.map{
+                var modifiedData = $0
+                if $0.inputDate == timeInterval {
+                    modifiedData.moodId = moodControl.mood
+                    if let weight = Double(weightTextField.text!) {
+                        modifiedData.weightValue = weight
+                        modifiedData.weightUnit = weightUnit.text
+                    }
+                    if let waist = Double(waistTextField.text!) {
+                        modifiedData.waistValue = waist
+                        modifiedData.waistUnit = waistUnit.text
+                    }
+                    
+                }
+                return modifiedData
+            }
+        
+        } else {
+            //create new data entry
+            var newData = TrackingInfo()
+            var enteredNewData = false
+            newData.inputDate = date.timeIntervalSince1970
+            if moodControl.mood != 0 {
+                newData.moodId = moodControl.mood
+                enteredNewData = true
+            }
+            if let weight = Double(weightTextField.text!) {
+                newData.weightValue = weight
+                newData.weightUnit = weightUnit.text
+                enteredNewData = true
+            }
+            if let waist = Double(waistTextField.text!) {
+                newData.waistValue = waist
+                newData.waistUnit = waistUnit.text
+                enteredNewData = true
+            }
+            if enteredNewData {
+                momTrackingValues.append(newData)
+            }
+            
+        }
+    }
+    
+    func loadSelectedDateInfo(for date: Date) {
+        
+        let timeInterval = date.timeIntervalSince1970
+        let infoFiltered = momTrackingValues.filter({$0.inputDate == timeInterval})
+        
+        if infoFiltered.count > 0  {
+            print(infoFiltered[0])
+            moodControl.mood = infoFiltered[0].moodId ?? 0
+            weightTextField.text = String(format:"%3.2f", infoFiltered[0].weightValue ?? 0)
+            weightUnit.text = infoFiltered[0].weightUnit
+            waistTextField.text = String(format:"%3.2f", infoFiltered[0].waistValue ?? 0)
+            waistUnit.text = infoFiltered[0].waistUnit
+            
+        } else {
+            moodControl.mood = 0
+            weightTextField.text = ""
+            weightUnit.text =  ((mom.profileInfo?.preferredMetrics!.contains("kg"))! ? "kg" : "lb")
+            waistTextField.text = ""
+            waistUnit.text = ((mom.profileInfo?.preferredMetrics!.contains("cm"))! ? "cm" : "in")
+        }
+
+    }
+    
+    func dateWasSelected(dateSelected: Date) {
+        
+        //save previous info
+        let previousSelectedDate = weekCalendarControl.getPreviousSelectedDate()
+        if (previousSelectedDate != nil) {
+            saveDateInfo(for: previousSelectedDate!)
+        }
+        //load selected date info
+        loadSelectedDateInfo(for: dateSelected)
+        
+    }
+    
 
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -82,62 +176,6 @@ class TrackingTableViewController: UITableViewController, UITextFieldDelegate {
         return replacementText.isValidDouble(maxDecimalPlaces: 2)
     }
     
-//    // MARK: - Table view data source
-//
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     /*
     // MARK: - Navigation

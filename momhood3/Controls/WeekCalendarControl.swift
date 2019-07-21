@@ -10,6 +10,7 @@ import UIKit
 
 @IBDesignable class WeekCalendarControl: UIStackView {
 
+    var delegate:WeekCalendarDelegate?
     
     //MARK: Properties
     private var dayButtons = [UIButton]()
@@ -27,6 +28,8 @@ import UIKit
             updateButtonSelectionStates()
         }
     }
+
+    private var previousSelectedDay = -1
     
     @IBInspectable var buttonSize: CGSize = CGSize(width: 50.0, height: 55.0) {
         didSet {
@@ -44,9 +47,6 @@ import UIKit
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.init(rgb: 0xD385D2)
-        //setupDate()
-//        setupButtons()
-//        selectedDay = selectDefaultDay()
         
     }
     
@@ -54,21 +54,22 @@ import UIKit
         super.init(coder: coder)
         self.backgroundColor = UIColor.init(rgb: 0xD385D2)
         
-//        //setupDate()
-//        setupButtons()
-//        selectedDay = selectDefaultDay()
-        
     }
     
+
     //MARK: Button Action
     @objc func dayButtonTapped(button: UIButton) {
         guard let index = dayButtons.index(of: button) else {
             fatalError("The button, \(button), is not in the dayButtons array: \(dayButtons)")
         }
         
+        //stores the previous selected day
+        previousSelectedDay = selectedDay
+        
         // stores the index of the selected button
         selectedDay = index
         
+        delegate?.dateWasSelected(dateSelected: dateArray[selectedDay])
         
     }
     
@@ -76,7 +77,15 @@ import UIKit
     public func getSelectedDate () -> Date {
         return dateArray[selectedDay]
     }
-    
+
+    public func getPreviousSelectedDate () -> Date? {
+        if previousSelectedDay != -1 {
+            return dateArray[previousSelectedDay]
+        } else {
+            return nil
+        }
+    }
+
     //MARK: private methods
     private func setupButtons() {
         
@@ -134,9 +143,7 @@ import UIKit
             
             //append the date element on dateArray
             
-            var modifiedDate = Calendar.current.date(byAdding: .day, value: i, to: firstDayOfWeek)!
-            modifiedDate = Calendar.current.startOfDay(for: modifiedDate)
-            print(modifiedDate)
+            let modifiedDate = Calendar.current.date(byAdding: .day, value: i, to: firstDayOfWeek)!.startOf(.day)
             dateArray.append(modifiedDate)
             
             // Get the day number of the date
@@ -187,6 +194,8 @@ import UIKit
         
         updateButtonSelectionStates()
         
+        
+        
     }
     
     private func updateButtonSelectionStates() {
@@ -200,23 +209,19 @@ import UIKit
     private func selectDefaultDay() -> Int {
         var selectedDayIndex = 0
         for (index, date) in dateArray.enumerated() {
-            if date == Calendar.current.startOfDay(for: Date()) {
+            if date == Date().startOf(.day) {
                 selectedDayIndex = index
             }
         }
         return selectedDayIndex
     }
     
-    func setupDate() {
-        let dateString = "08-07-2019"
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        let dateFromString = dateFormatter.date(from: dateString)
-        firstDayOfWeek = dateFromString!
-        
-    }
-    
 }
+
+protocol WeekCalendarDelegate {
+    func dateWasSelected(dateSelected: Date)
+}
+
 /*
 // Only override draw() if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

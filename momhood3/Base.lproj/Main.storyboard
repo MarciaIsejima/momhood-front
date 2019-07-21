@@ -685,10 +685,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="u4n-t1-OR8"/>
                     <connections>
+                        <outlet property="moodControl" destination="7nC-Qw-QC4" id="WPj-Fa-bk4"/>
                         <outlet property="subtitleLabel" destination="xOW-An-vta" id="18I-wQ-53c"/>
                         <outlet property="waistTextField" destination="RFs-3h-Sea" id="yyc-y6-t08"/>
+                        <outlet property="waistUnit" destination="lnh-ja-WuO" id="Uog-f8-y1p"/>
                         <outlet property="weekCalendarControl" destination="In4-d4-BFF" id="CPD-6t-0Qd"/>
                         <outlet property="weightTextField" destination="8ne-cQ-bba" id="n7O-aB-g1k"/>
+                        <outlet property="weightUnit" destination="eMn-41-kmz" id="LHP-sK-Lel"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bWF-oc-J3b" userLabel="First Responder" sceneMemberID="firstResponder"/>

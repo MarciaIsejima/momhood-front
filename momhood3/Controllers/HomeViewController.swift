@@ -39,7 +39,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         //load Timeline
         loadTimeline()
@@ -49,8 +48,8 @@ class HomeViewController: UIViewController {
         
         //load pregnancy info
         
-        //calculatePregnancyParameters(for: Date.init(timeIntervalSince1970: (mom.profileInfo?.expectedDueDate)!))
-        calculatePregnancyParameters(for: getDate(dateString: "2020-01-14")!)
+        calculatePregnancyParameters(for: Date.init(timeIntervalSince1970: (mom.profileInfo?.expectedDueDate)!))
+        //calculatePregnancyParameters(for: getDate(dateString: "2020-01-14")!)
         
         //load current Week info
         loadCurrentWeek()

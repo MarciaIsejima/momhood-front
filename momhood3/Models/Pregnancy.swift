@@ -30,7 +30,7 @@ func calculatePregnancyParameters(for expectedDueDate:Date) {
     
     //calculate first day of each pregnancy week
     var firstDayOfWeek = firstDayOfPregnancy
-    let currentDate = Calendar.current.startOfDay(for: Date())
+    let currentDate = Date().startOf(.day)
     var diff = Calendar.current.dateComponents([.day], from:firstDayOfWeek!, to: currentDate).day
     while diff! >= 0 {
         pregnancy.firstDayOfWeek.append(firstDayOfWeek!)
@@ -41,7 +41,7 @@ func calculatePregnancyParameters(for expectedDueDate:Date) {
 //        print(index)
 //        print(firstDay)
 //    }
-//    
+//
     //calculate how many days to go
     pregnancy.daysToGo = Calendar.current.dateComponents([.day], from:currentDate, to: expectedDueDate).day!
     
@@ -52,5 +52,5 @@ func getDate(dateString: String ) -> Date? {
     dateFormatter.dateFormat = "yyyy-MM-dd"
     dateFormatter.timeZone = TimeZone.current
     dateFormatter.locale = Locale.current
-    return Calendar.current.startOfDay(for: dateFormatter.date(from: dateString)!) // replace Date String
+    return dateFormatter.date(from: dateString)?.startOf(.day) // replace Date String
 }

@@ -18,11 +18,11 @@ public func retrieveSampleData2() -> Data {
 
 let user_json = """
 {"_id": "5d2e65691c9d44000094a6ec",
-"profileInfo": {"name": "Katie", "email": "katie1234@gmail.com", "password": "katie1234", "dateOfBirth": 0, "expectedDueDate": 0, "preferredMetrics": "kg/cm", "prePregnancyWeightValue": 55.0, "prePregnancyWeightUnit": "kg", "prePregnancyWaistValue": 80.0, "prePregnancyWaistUnit": "cm", "heightValue": 156.0, "heightUnit": "cm"},
+"profileInfo": {"name": "Katie", "email": "katie1234@gmail.com", "password": "katie1234", "dateOfBirth": 0, "expectedDueDate": 1578988800.0, "preferredMetrics": "kg/cm", "prePregnancyWeightValue": 55.0, "prePregnancyWeightUnit": "kg", "prePregnancyWaistValue": 80.0, "prePregnancyWaistUnit": "cm", "heightValue": 156.0, "heightUnit": "cm"},
 "babyInfo": {"nickname": "John", "gender": "male"},
 "partnerInfo": [{"name": "Joey","email": "joey1234@gmail.com","phone": "12345678991","relationship": "partner","status": 1},
 {"name": "Maggie","email": "maggie9999@gmail.com","phone": "393994005959","relationship": "mother","status": 1}],
-"trackingInfo": [{"inputDate": 0,"weightValue": 55.5,"weightUnit": "kg","waistValue": 82.0,"waistUnit": "cm","moodId": 3}]
+"trackingInfo": [{"inputDate": 1563235200.0,"weightValue": 55.5,"weightUnit": "kg","waistValue": 82.0,"waistUnit": "cm","moodId": 3}]
 }
 """.data(using: .utf8)!
 
