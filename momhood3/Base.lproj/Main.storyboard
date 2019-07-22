@@ -537,10 +537,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTb-2T-y83">
-                                                    <rect key="frame" x="0.0" y="0.0" width="363.5" height="569"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="569"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOW-An-vta">
-                                                            <rect key="frame" x="157.5" y="4" width="48.5" height="16.5"/>
+                                                            <rect key="frame" x="163.5" y="4" width="48.5" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto Medium" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -554,19 +554,19 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you feel today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Q9-ec-MQp">
-                                                            <rect key="frame" x="82.5" y="115.5" width="198.5" height="23"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="How do you feel today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Q9-ec-MQp">
+                                                            <rect key="frame" x="88.5" y="115.5" width="198.5" height="23"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="19"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell us your weight today:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJn-pv-PLq">
-                                                            <rect key="frame" x="91.5" y="248.5" width="180" height="19"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tell us your weight today:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJn-pv-PLq">
+                                                            <rect key="frame" x="97.5" y="248.5" width="180" height="19"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ne-cQ-bba" userLabel="Weight Text Field">
+                                                        <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ne-cQ-bba" userLabel="Weight Text Field">
                                                             <rect key="frame" x="140" y="279.5" width="65" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="65" id="54n-xK-kGg"/>
@@ -578,25 +578,25 @@
                                                                 <action selector="done:" destination="Zod-2N-fLW" eventType="primaryActionTriggered" id="Iuv-AY-42K"/>
                                                             </connections>
                                                         </textField>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMn-41-kmz">
-                                                            <rect key="frame" x="213" y="285" width="21.5" height="19"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="lbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMn-41-kmz">
+                                                            <rect key="frame" x="213" y="285" width="33" height="19"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnh-ja-WuO">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnh-ja-WuO">
                                                             <rect key="frame" x="213" y="382" width="13" height="19"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell us your waist size today:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1i-fy-PXX">
-                                                            <rect key="frame" x="80" y="345.5" width="203" height="19"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tell us your waist size today:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1i-fy-PXX">
+                                                            <rect key="frame" x="86" y="345.5" width="203" height="19"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RFs-3h-Sea">
+                                                        <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RFs-3h-Sea">
                                                             <rect key="frame" x="140" y="376.5" width="65" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="65" id="gSa-Xf-ean"/>
@@ -608,7 +608,7 @@
                                                                 <action selector="done:" destination="Zod-2N-fLW" eventType="primaryActionTriggered" id="tkf-Ty-EAf"/>
                                                             </connections>
                                                         </textField>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7nC-Qw-QC4" customClass="MoodControl" customModule="momhood3" customModuleProvider="target">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7nC-Qw-QC4" customClass="MoodControl" customModule="momhood3" customModuleProvider="target">
                                                             <rect key="frame" x="21.5" y="156.5" width="320" height="56"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="faceCount">
@@ -619,8 +619,8 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </stackView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEs-pM-vfy">
-                                                            <rect key="frame" x="59" y="466.5" width="245" height="45"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEs-pM-vfy">
+                                                            <rect key="frame" x="65" y="466.5" width="245" height="45"/>
                                                             <color key="backgroundColor" red="0.82745098039999998" green="0.52156862749999999" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="245" id="Q25-Gt-cGE"/>
@@ -683,8 +683,17 @@
                             <outlet property="delegate" destination="Zod-2N-fLW" id="lWr-Ew-ZkB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="u4n-t1-OR8"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="u4n-t1-OR8">
+                        <barButtonItem key="leftBarButtonItem" image="calendarBlack" id="b0R-gn-iOM">
+                            <connections>
+                                <segue destination="bGx-Id-cCq" kind="show" id="s69-zW-WqP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="calendarBarButtom" destination="b0R-gn-iOM" id="5P4-ij-8rE"/>
                         <outlet property="moodControl" destination="7nC-Qw-QC4" id="WPj-Fa-bk4"/>
                         <outlet property="subtitleLabel" destination="xOW-An-vta" id="18I-wQ-53c"/>
                         <outlet property="waistTextField" destination="RFs-3h-Sea" id="yyc-y6-t08"/>
@@ -696,7 +705,38 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bWF-oc-J3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="1358.7706146926537"/>
+            <point key="canvasLocation" x="791" y="1359"/>
+        </scene>
+        <!--Tracking Weeks Table View Controller-->
+        <scene sceneID="fkC-PX-ERQ">
+            <objects>
+                <tableViewController id="bGx-Id-cCq" customClass="TrackingWeeksTableViewController" customModule="momhood3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qbd-JJ-HQH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="weekCell" rowHeight="60" id="RRv-Q1-eou">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RRv-Q1-eou" id="vJ7-li-4YH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Zod-2N-fLW" kind="show" id="vyO-qO-scl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bGx-Id-cCq" id="I01-ED-A54"/>
+                            <outlet property="delegate" destination="bGx-Id-cCq" id="bt6-1Q-5iX"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D2V-mU-qb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540" y="1359"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1010,10 +1050,14 @@
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="87j-Tm-jyd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="backBlack" backIndicatorTransitionMaskImage="backBlack" id="87j-Tm-jyd">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1031,6 +1075,7 @@
         <image name="baby" width="163" height="125"/>
         <image name="babyHome" width="163" height="157"/>
         <image name="backBlack" width="18" height="28"/>
+        <image name="calendarBlack" width="44" height="51"/>
         <image name="calendar_black" width="44" height="50"/>
         <image name="diet" width="81" height="125"/>
         <image name="dietHome" width="112" height="146"/>
@@ -1046,6 +1091,7 @@
         <image name="yourbodyHome" width="128" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="vyO-qO-scl"/>
         <segue reference="MTF-Jr-7Eb"/>
     </inferredMetricsTieBreakers>
 </document>

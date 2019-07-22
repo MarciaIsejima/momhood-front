@@ -10,6 +10,9 @@ import UIKit
 
 class TrackingTableViewController: UITableViewController, UITextFieldDelegate, WeekCalendarDelegate {
 
+    var selectedWeek: Int = -1
+    
+    @IBOutlet weak var calendarBarButtom: UIBarButtonItem!
     @IBOutlet weak var weekCalendarControl: WeekCalendarControl!
     @IBOutlet weak var moodControl: MoodControl!
     @IBOutlet weak var waistUnit: UILabel!
@@ -58,15 +61,21 @@ class TrackingTableViewController: UITableViewController, UITextFieldDelegate, W
     
     override func viewDidAppear(_ animated: Bool) {
         
-        //set left bar button image
-        let customButton = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 30, height: 30))
-        customButton.setImage(UIImage.init(named:"calendarBlack"), for: .normal)
-        navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: customButton)
-        
         //set week calendar first day
-        weekCalendarControl.firstDayOfWeek = pregnancy.firstDayOfWeek.last!
+        if selectedWeek == -1 {
+            weekCalendarControl.firstDayOfWeek = pregnancy.firstDayOfWeek.last!
+            navigationItem.title = "Week \(pregnancy.firstDayOfWeek.count + 1)"
+        } else {
+            weekCalendarControl.firstDayOfWeek = pregnancy.firstDayOfWeek[selectedWeek]
+            navigationItem.title = "Week \(selectedWeek + 1)"
+        }
+        
         loadSelectedDateInfo(for: weekCalendarControl.getSelectedDate())
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("save!!!")
     }
     
     @IBAction func done (_ sender: UITextField) {
@@ -106,7 +115,7 @@ class TrackingTableViewController: UITableViewController, UITextFieldDelegate, W
                 newData.moodId = moodControl.mood
                 enteredNewData = true
             }
-            if let weight = Double(weightTextField.text!) {
+            if let weight = Double(weightTextField.text!)  {
                 newData.weightValue = weight
                 newData.weightUnit = weightUnit.text
                 enteredNewData = true
@@ -129,12 +138,20 @@ class TrackingTableViewController: UITableViewController, UITextFieldDelegate, W
         let infoFiltered = momTrackingValues.filter({$0.inputDate == timeInterval})
         
         if infoFiltered.count > 0  {
-            print(infoFiltered[0])
             moodControl.mood = infoFiltered[0].moodId ?? 0
-            weightTextField.text = String(format:"%3.2f", infoFiltered[0].weightValue ?? 0)
-            weightUnit.text = infoFiltered[0].weightUnit
-            waistTextField.text = String(format:"%3.2f", infoFiltered[0].waistValue ?? 0)
-            waistUnit.text = infoFiltered[0].waistUnit
+            weightTextField.text = String(format:"%3.2f", infoFiltered[0].weightValue ?? "")
+            if let unit1 = infoFiltered[0].weightUnit {
+                weightUnit.text = unit1
+            } else {
+                weightUnit.text =  ((mom.profileInfo?.preferredMetrics!.contains("kg"))! ? "kg" : "lb")
+            }
+
+            waistTextField.text = String(format:"%3.2f", infoFiltered[0].waistValue ?? "")
+            if let unit2 = infoFiltered[0].waistUnit {
+                waistUnit.text = unit2
+            } else {
+                waistUnit.text = ((mom.profileInfo?.preferredMetrics!.contains("cm"))! ? "cm" : "in")
+            }
             
         } else {
             moodControl.mood = 0
@@ -158,7 +175,6 @@ class TrackingTableViewController: UITableViewController, UITextFieldDelegate, W
         
     }
     
-
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // User pressed the delete-key to remove a character, this is always valid, return true to allow change
@@ -177,14 +193,15 @@ class TrackingTableViewController: UITableViewController, UITextFieldDelegate, W
     }
     
 
-    /*
+  
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        print("save current data!!!")
     }
-    */
+ 
 
 }

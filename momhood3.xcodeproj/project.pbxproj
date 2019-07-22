@@ -28,6 +28,7 @@
 		4059A4A922C95F7600C1CE85 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4059A49C22C959F200C1CE85 /* Roboto-Bold.ttf */; };
 		405DA67222D814AF0008DC1D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4059A47D22C954EB00C1CE85 /* Info.plist */; };
 		405DA67422D815680008DC1D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40FCC95622CEF3E000C257E8 /* Roboto-Regular.ttf */; };
+		4069430122E56B8800D0507B /* TrackingWeeksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069430022E56B8800D0507B /* TrackingWeeksTableViewController.swift */; };
 		40885AC222C9C34E00DC1180 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40885AC122C9C34E00DC1180 /* TimelineTableViewController.swift */; };
 		40885AC422CAA70700DC1180 /* WeekTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40885AC322CAA70700DC1180 /* WeekTableViewCell.swift */; };
 		40885AC622CB245300DC1180 /* SampleData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40885AC522CB245300DC1180 /* SampleData2.swift */; };
@@ -66,6 +67,7 @@
 		4059A49B22C959F200C1CE85 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		4059A49C22C959F200C1CE85 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		4059A4A222C95C4400C1CE85 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4069430022E56B8800D0507B /* TrackingWeeksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingWeeksTableViewController.swift; sourceTree = "<group>"; };
 		40885AC122C9C34E00DC1180 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
 		40885AC322CAA70700DC1180 /* WeekTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTableViewCell.swift; sourceTree = "<group>"; };
 		40885AC522CB245300DC1180 /* SampleData2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData2.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				40885AC122C9C34E00DC1180 /* TimelineTableViewController.swift */,
 				4059A47122C954EA00C1CE85 /* HomeViewController.swift */,
 				40FA59B022DE4A9C0093F768 /* TrackingTableViewController.swift */,
+				4069430022E56B8800D0507B /* TrackingWeeksTableViewController.swift */,
 				4059A4A222C95C4400C1CE85 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
@@ -286,6 +289,7 @@
 			files = (
 				40885AC622CB245300DC1180 /* SampleData2.swift in Sources */,
 				4034EE1422D723E50071A0FA /* WeekCalendarControl.swift in Sources */,
+				4069430122E56B8800D0507B /* TrackingWeeksTableViewController.swift in Sources */,
 				40885AEB22CBDFD600DC1180 /* WeekDetailViewController.swift in Sources */,
 				40FA59B122DE4A9C0093F768 /* TrackingTableViewController.swift in Sources */,
 				4059A49522C959E400C1CE85 /* WeeklyInfoService.swift in Sources */,
