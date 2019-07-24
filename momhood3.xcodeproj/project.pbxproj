@@ -18,7 +18,6 @@
 		4059A48922C959A100C1CE85 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059A48722C959A100C1CE85 /* UIColor+Hex.swift */; };
 		4059A48F22C959D600C1CE85 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059A48E22C959D600C1CE85 /* Timeline.swift */; };
 		4059A49422C959E400C1CE85 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059A49122C959E400C1CE85 /* APIClient.swift */; };
-		4059A49522C959E400C1CE85 /* WeeklyInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059A49222C959E400C1CE85 /* WeeklyInfoService.swift */; };
 		4059A49622C959E400C1CE85 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059A49322C959E400C1CE85 /* SampleData.swift */; };
 		4059A4A322C95C4400C1CE85 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059A4A222C95C4400C1CE85 /* ProfileViewController.swift */; };
 		4059A4A522C95F7600C1CE85 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4059A49822C959F200C1CE85 /* Roboto-Medium.ttf */; };
@@ -59,7 +58,6 @@
 		4059A48722C959A100C1CE85 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		4059A48E22C959D600C1CE85 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		4059A49122C959E400C1CE85 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		4059A49222C959E400C1CE85 /* WeeklyInfoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyInfoService.swift; sourceTree = "<group>"; };
 		4059A49322C959E400C1CE85 /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		4059A49822C959F200C1CE85 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		4059A49922C959F200C1CE85 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				4059A49122C959E400C1CE85 /* APIClient.swift */,
-				4059A49222C959E400C1CE85 /* WeeklyInfoService.swift */,
 				4059A49322C959E400C1CE85 /* SampleData.swift */,
 				40885AC522CB245300DC1180 /* SampleData2.swift */,
 			);
@@ -292,7 +289,6 @@
 				4069430122E56B8800D0507B /* TrackingWeeksTableViewController.swift in Sources */,
 				40885AEB22CBDFD600DC1180 /* WeekDetailViewController.swift in Sources */,
 				40FA59B122DE4A9C0093F768 /* TrackingTableViewController.swift in Sources */,
-				4059A49522C959E400C1CE85 /* WeeklyInfoService.swift in Sources */,
 				4059A48F22C959D600C1CE85 /* Timeline.swift in Sources */,
 				4059A49622C959E400C1CE85 /* SampleData.swift in Sources */,
 				4059A48822C959A100C1CE85 /* UIImageView+Downloading.swift in Sources */,

@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //retrieve user data
         mom = retrieveUserData(userId: userId)!
         
@@ -58,9 +58,11 @@ class HomeViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
-        //hide navigation bar on Home page
-        self.navigationController!.isNavigationBarHidden = true
         
         //greeting label
         greetingLabel?.text = "Hello \(mom.profileInfo?.name ?? "User")!"
