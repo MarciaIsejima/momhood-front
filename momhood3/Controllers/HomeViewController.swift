@@ -39,43 +39,43 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        //retrieve user data
+        mom = retrieveUserData(userId: userId)!
         
+        //get a copy of mom's tracking info
+        momTrackingValues = mom.trackingInfo!
+
+        //load pregnancy parameters based on expected due date
+        //calculatePregnancyParameters(for: Date.init(timeIntervalSince1970: (mom.profileInfo?.expectedDueDate)!))
+        calculatePregnancyParameters(for: getDate(dateString: "2020-01-14")!)
+     
         //load Timeline
-        loadTimeline()
-        
-        //load user info
-        loadUserInfo()
-        
-        //load pregnancy info
-        
-        calculatePregnancyParameters(for: Date.init(timeIntervalSince1970: (mom.profileInfo?.expectedDueDate)!))
-        //calculatePregnancyParameters(for: getDate(dateString: "2020-01-14")!)
+        loadTimeline(currentWeekOfPregnancy: pregnancy.currentWeek)
         
         //load current Week info
         loadCurrentWeek()
+
+    }
     
-        //greeting message
+    override func viewDidAppear(_ animated: Bool) {
+        //hide navigation bar on Home page
+        self.navigationController!.isNavigationBarHidden = true
+        
+        //greeting label
         greetingLabel?.text = "Hello \(mom.profileInfo?.name ?? "User")!"
+        
+        //period of pregnancy
+        periodLabel.text = currentWeek.period
+        
+        //number of days to go
+        daysToGoLabel.text = "\(pregnancy.daysToGo) days to go"
         
         //hero image
         heroImageView?.image=UIImage(named: "week16Hero")
         
         //week count label
         weekCountLabel?.text = "Week \(currentWeek.week_count ?? 0)"
-
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //hide navigation bar on Home page
-        self.navigationController!.isNavigationBarHidden = true
-//        navigationItem.title = "Timeline"
-        
-        //period of pregnancy
-        periodLabel.text = currentWeek.period
-        
-        //number of days to go
-        daysToGoLabel.text = "200 Days to go"
-        daysToGoLabel.text = "\(pregnancy.daysToGo) days to go"
         
         //Your baby session
         babyViewController.layer.borderWidth = 1
@@ -121,3 +121,5 @@ class HomeViewController: UIViewController {
     }
 
 }
+
+

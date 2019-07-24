@@ -143,7 +143,9 @@ import UIKit
             
             //append the date element on dateArray
             
-            let modifiedDate = Calendar.current.date(byAdding: .day, value: i, to: firstDayOfWeek)!.startOf(.day)
+            let modifiedDate = Calendar.current.date(byAdding: .day, value: i, to: firstDayOfWeek)!
+            
+            
             dateArray.append(modifiedDate)
             
             // Get the day number of the date
@@ -209,7 +211,7 @@ import UIKit
     private func selectDefaultDay() -> Int {
         var selectedDayIndex = 0
         for (index, date) in dateArray.enumerated() {
-            if date == Date().startOf(.day) {
+            if date == Calendar.current.startOfDay(for: Date()) {
                 selectedDayIndex = index
             }
         }

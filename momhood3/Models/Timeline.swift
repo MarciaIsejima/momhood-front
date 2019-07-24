@@ -91,49 +91,35 @@ let sessionTitleColors: [String: Int] = [
     "activities": 0x6fa38e
 ]
 
-var namesOfIntegers = [Int: String]()
-struct GroceryProduct: Codable {
-    var name: String
-    var points: Int
-    var description: String?
-    var price: Price?
-}
+func loadTimeline(currentWeekOfPregnancy: Int) {
+    
+//    let json = retrieveSampleData()
+//
+//    let decoder = JSONDecoder()
+//
+//    if let weeks = try? decoder.decode([Week].self, from: json) {
+//        timeline = weeks
+//    }
 
-struct Price: Codable{
-    var unit: String?
-    var value: Double?
-}
-
-func loadTimeline() {
-    
-    let json = retrieveSampleData()
-    
-    let myPrice = Price(unit: "C$", value:20)
-    
-    var myList = GroceryProduct(name: "Peach", points: 500, description: "Very expensive fruit!!!", price: myPrice )
-    myList.name = "Aceroli"
-    
-    print("\(myList.price!.unit ?? "")  ")
+    timeline = retrievePregnancyWeeks(currentWeek: currentWeekOfPregnancy)!
+    //timeline.removeFirst()
     
     
-    let decoder = JSONDecoder()
-    
-    if let weeks = try? decoder.decode([Week].self, from: json) {
-        timeline = weeks
-    }
     
 }
 
 func loadCurrentWeek() {
     // function that retrieves the current week of pregnancy based on user data
     
-    /*** replace this by current week calculation function +
-     call to api ***/
-    let json = retrieveSampleData2()
+//    /*** replace this by current week calculation function +
+//     call to api ***/
+//    let json = retrieveSampleData2()
+//
+//    let decoder = JSONDecoder()
+//
+//    if let week = try? decoder.decode(Week.self, from: json){
+//        currentWeek = week
+//    }
     
-    let decoder = JSONDecoder()
-    
-    if let week = try? decoder.decode(Week.self, from: json){
-        currentWeek = week
-    }
+    currentWeek = timeline[0]
 }

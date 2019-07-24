@@ -38,18 +38,12 @@ class TrackingTableViewController: UITableViewController, UITextFieldDelegate, W
         //show navigation bar
         self.navigationController!.isNavigationBarHidden = false
         //set page title
-        navigationItem.title = "Week \(currentWeek.week_count ?? 0)"
+        //navigationItem.title = "Week \(currentWeek.week_count ?? 0)"
         
-        //set page subtitle
-        subtitleLabel.text = "\(currentWeek.period ?? "")    \(pregnancy.daysToGo) days to go"
-
         //format text fields to show only bottom border
         weightTextField.setBottomBorder()
         waistTextField.setBottomBorder()
-        
-        //get mom tracking info
-        momTrackingValues = mom.trackingInfo!
-        
+                
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -59,15 +53,26 @@ class TrackingTableViewController: UITableViewController, UITextFieldDelegate, W
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         //set week calendar first day
         if selectedWeek == -1 {
             weekCalendarControl.firstDayOfWeek = pregnancy.firstDayOfWeek.last!
-            navigationItem.title = "Week \(pregnancy.firstDayOfWeek.count + 1)"
+            //set page title
+            navigationItem.title = "Week \(currentWeek.week_count ?? 1)"
+            //set page subtitle
+            subtitleLabel.text = "\(currentWeek.period ?? "")    \(pregnancy.daysToGo) days to go"
+            
+
         } else {
             weekCalendarControl.firstDayOfWeek = pregnancy.firstDayOfWeek[selectedWeek]
+            //set page title
             navigationItem.title = "Week \(selectedWeek + 1)"
+            //set page subtitle
+            let filtered = timeline.filter{ ($0.week_count == selectedWeek + 1) }
+            subtitleLabel.text = "\(filtered[0].period ?? "")    \(pregnancy.daysToGo) days to go"
+            
+
         }
         
         loadSelectedDateInfo(for: weekCalendarControl.getSelectedDate())
@@ -75,7 +80,10 @@ class TrackingTableViewController: UITableViewController, UITextFieldDelegate, W
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        print("save!!!")
+        
+        saveDateInfo(for: weekCalendarControl.getSelectedDate())
+        saveTrackingValues(values: momTrackingValues)
+        
     }
     
     @IBAction func done (_ sender: UITextField) {

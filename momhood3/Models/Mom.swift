@@ -8,6 +8,7 @@
 
 import Foundation
 
+var userId: String = "5d2e65691c9d44000094a6ec"
 var mom = Mom()
 var momTrackingValues = [TrackingInfo]()
 
@@ -85,3 +86,4 @@ func loadUserInfo() {
 //    }
     
 }
+

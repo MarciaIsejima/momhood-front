@@ -10,6 +10,7 @@
 
 
 import Foundation
+import UIKit
 
 enum APIError: Error {
     case invalidURL
@@ -35,6 +36,10 @@ class APIRequest {
         self.method = method
         self.path = path
     }
+}
+
+struct RequestFormat: Encodable {
+    var trackingInfo: [TrackingInfo]?
 }
 
 struct APIClient {
@@ -72,3 +77,105 @@ struct APIClient {
         task.resume()
     }
 }
+
+func retrieveUserData(userId: String) -> Mom? {
+    guard let url = URL(string: "https://calm-scrubland-32663.herokuapp.com/api/users/\(userId)") else {return nil}
+    let semaphore = DispatchSemaphore(value: 0)
+    
+    var result = Mom()
+    
+    let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+        if let data = data {
+            
+            print(data)
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                print(json)
+                let decoder = JSONDecoder()
+                
+                if let user = try? decoder.decode(Mom.self, from: data){
+                    result = user
+                }
+                
+            } catch {
+                print(error)
+                
+            }
+            
+        }
+
+        semaphore.signal()
+    }
+    
+    task.resume()
+    semaphore.wait()
+    return result
+    
+}
+
+func retrievePregnancyWeeks(currentWeek: Int) -> [Week]? {
+    guard let url = URL(string: "https://calm-scrubland-32663.herokuapp.com/api/weeks/\(currentWeek)") else {return nil}
+    let semaphore = DispatchSemaphore(value: 0)
+    
+    var result = [Week]()
+    
+    let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+        if let data = data {
+            
+            print(data)
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                print(json)
+                let decoder = JSONDecoder()
+                
+                if let weeks = try? decoder.decode([Week].self, from: data){
+                    result = weeks
+                }
+                
+            } catch {
+                print(error)
+                
+            }
+            
+        }
+        
+        semaphore.signal()
+    }
+    
+    task.resume()
+    semaphore.wait()
+    return result
+    
+}
+
+func saveTrackingValues(values: [TrackingInfo]) {
+    
+    let myRequestObject = RequestFormat(trackingInfo: values)
+    
+    do {
+        let jsonData = try JSONEncoder().encode(myRequestObject)
+
+            guard let url = URL(string: "https://calm-scrubland-32663.herokuapp.com/api/users/\(userId)") else { return }
+            var request = URLRequest(url: url)
+            request.httpMethod = "PUT"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = jsonData
+            let session = URLSession.shared
+            session.dataTask(with: request) { (data, response, error) in
+
+                if let data = data {
+                    //print(data)
+                }
+                
+                }.resume()
+        
+    } catch {
+        print(error)
+    }
+    
+
+    
+}
+
